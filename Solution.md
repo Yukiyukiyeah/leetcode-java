@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-02 16:03:25
+ * @LastEditTime: 2020-12-03 13:12:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -28,3 +28,7 @@
 3. There are 4 possibilities for mid point and target: Figure out whether the mid point and the target are in the same part, if yes, turn to the normal binary search problem; if not, shorten the search scope according to which part the mid point is in.
 
 4. (II)If there are duplicates in the array, there's another possibility when the mid point is the same as start point or end point, we won't know about which part is mid point in in this situation. So we have to step in the start point.
+
+## 382. Linked List Random Node
+
+Using a reservoir sampling, each number has the same probability in current scope.
