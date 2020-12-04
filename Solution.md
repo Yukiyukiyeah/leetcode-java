@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-04 12:13:29
+ * @LastEditTime: 2020-12-04 13:04:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -38,8 +38,13 @@ Using a reservoir sampling, each number has the same probability in current scop
 Whether we need a helper function to recurse binary tree depends on whether the return node is the root.
 
 ## 114. Flatten Binary Tree to Linked List
-preorder  traversal
+
+post-order  traversal
 
 ## 897. Increasing Order Search Tree
 
-inorder traversal
+in-order traversal
+
+## 95. Unique Binary Search Trees II
+
+for i in [1, n], left subtree contains [1, i - 1], right subtree contains [i + 1, n].
