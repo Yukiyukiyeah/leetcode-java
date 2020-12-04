@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-03 13:12:13
+ * @LastEditTime: 2020-12-04 12:13:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -32,3 +32,14 @@
 ## 382. Linked List Random Node
 
 Using a reservoir sampling, each number has the same probability in current scope.
+
+# Binary Tree
+
+Whether we need a helper function to recurse binary tree depends on whether the return node is the root.
+
+## 114. Flatten Binary Tree to Linked List
+preorder  traversal
+
+## 897. Increasing Order Search Tree
+
+inorder traversal
