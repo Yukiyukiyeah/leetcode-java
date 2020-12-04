@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-04 13:04:18
+ * @LastEditTime: 2020-12-04 14:18:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -48,3 +48,11 @@ in-order traversal
 ## 95. Unique Binary Search Trees II
 
 for i in [1, n], left subtree contains [1, i - 1], right subtree contains [i + 1, n].
+
+## 96. Unique Binary Search Trees
+
+Dynamic Programming: sum of for each number of root, answer of left subtree * answer of right subtree.
+
+i: ith num,  n: in total n nums
+F(i, n) = G(i - 1) * G(n - i)
+G(i) = F(1, i) + F(2, i) + ... + F(i-1, i)
