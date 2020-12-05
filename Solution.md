@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-05 17:54:09
+ * @LastEditTime: 2020-12-05 18:50:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -64,4 +64,14 @@ return 1 + count(root.left) + count(root.right);
 Time Complexity: O(n)
 
 Solution 2: halve the tree in each recursion step, find if the left subtree and right subtree has the same height.
+If they have the same height, the left tree is complete, we recursively count the nodes in right subtree plus 2^(h-1)-1 in left subtree and 1 on root;
+If they are not, the right tree is complete, we recursively count the nodes in left subtree plus 2^h-1 in right subtree and 1 on root.
 Time Complexity: O(log(n)^2)
+
+## 86. Partition List
+
+1. Make two linked lists, with two dummy nodes and two pointers, one for smaller nodes, the other for bigger nodes.
+
+2. Iterate from head, put each node into new linked list.
+
+3. Connect these two linked lists.
