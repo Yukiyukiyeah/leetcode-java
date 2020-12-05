@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-04 14:18:16
+ * @LastEditTime: 2020-12-05 17:54:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -56,3 +56,12 @@ Dynamic Programming: sum of for each number of root, answer of left subtree * an
 i: ith num,  n: in total n nums
 F(i, n) = G(i - 1) * G(n - i)
 G(i) = F(1, i) + F(2, i) + ... + F(i-1, i)
+
+## 222.Count Complete Tree Nodes
+
+Solution 1: Recursion
+return 1 + count(root.left) + count(root.right);
+Time Complexity: O(n)
+
+Solution 2: halve the tree in each recursion step, find if the left subtree and right subtree has the same height.
+Time Complexity: O(log(n)^2)
