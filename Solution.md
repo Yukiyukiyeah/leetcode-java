@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-05 18:50:52
+ * @LastEditTime: 2020-12-06 17:04:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -75,3 +75,11 @@ Time Complexity: O(log(n)^2)
 2. Iterate from head, put each node into new linked list.
 
 3. Connect these two linked lists.
+
+## 93. Restore IP Addresses
+
+1. Use backtracking algorithm.
+
+2. for each number in the scope of 1 to 3 digit and less than 255, backtrack the following part, when 4 numbers are found and all 4 numbers are correct, add it to the result.
+
+3. Be careful of the starting with '0' case.
