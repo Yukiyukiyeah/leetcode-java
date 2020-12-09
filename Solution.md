@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-06 17:04:47
+ * @LastEditTime: 2020-12-09 22:50:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -83,3 +83,22 @@ Time Complexity: O(log(n)^2)
 2. for each number in the scope of 1 to 3 digit and less than 255, backtrack the following part, when 4 numbers are found and all 4 numbers are correct, add it to the result.
 
 3. Be careful of the starting with '0' case.
+
+## 187. Repeated DNA Sequences
+
+Use a Sliding Window of 10, and a HashSet to store each of the sequence iterated.
+
+## 189. Rotated Array
+
+Solution 1: Swap 1 element for k times.
+Solution 2: Use Another array to store the new value
+Solution 3: Rotate nums[i] to nums[i + k], after the round has finished, start with nums[i+1] and so on,
+Solution 4: Reverse the whole array, then reverse again the number between k and after k.
+
+## 133. Clone Graph
+
+Deep copy the node. Use a HashMap to store the node has been visited. Depth-first search all the neighbors of the node, and add them to the list if haven't visited.
+
+## 228. Summary Ranges
+
+Slow and Fast pointers. The fast pointer will find the end position of each range.
