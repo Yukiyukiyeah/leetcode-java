@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-11 14:33:56
+ * @LastEditTime: 2020-12-11 15:16:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -105,6 +105,14 @@ Slow and Fast pointers. The fast pointer will find the end position of each rang
 
 ## 124. Binary Tree Maximum Path
 
+Post-order Traversal
+
 There are 3 ways to construct a maximum path: 1. leftChild + root + root.parent; 2. rightChild + root + root.parent; 3. leftChild + root + rightChild
 
 Use a global variable to store the global maximum value. For condition 1 and 2, recursively find the max value.
+
+## 105. Construct Binary Tree from Preorder and Inorder Traversal
+
+Pre-order Traversal
+
+Find the root node's position in in-order traversal, the left of it are for the left subtree, and the right are for the right subtree. Construct the tree recursively.
