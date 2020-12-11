@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-11 15:16:31
+ * @LastEditTime: 2020-12-11 15:25:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -116,3 +116,5 @@ Use a global variable to store the global maximum value. For condition 1 and 2, 
 Pre-order Traversal
 
 Find the root node's position in in-order traversal, the left of it are for the left subtree, and the right are for the right subtree. Construct the tree recursively.
+
+
