@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-02 14:17:07
- * @LastEditTime: 2020-12-09 22:50:01
+ * @LastEditTime: 2020-12-11 14:33:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/Solution.md
@@ -102,3 +102,9 @@ Deep copy the node. Use a HashMap to store the node has been visited. Depth-firs
 ## 228. Summary Ranges
 
 Slow and Fast pointers. The fast pointer will find the end position of each range.
+
+## 124. Binary Tree Maximum Path
+
+There are 3 ways to construct a maximum path: 1. leftChild + root + root.parent; 2. rightChild + root + root.parent; 3. leftChild + root + rightChild
+
+Use a global variable to store the global maximum value. For condition 1 and 2, recursively find the max value.
