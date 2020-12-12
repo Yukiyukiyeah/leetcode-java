@@ -1,9 +1,17 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-12 17:05:13
+ * @LastEditTime: 2020-12-12 19:57:53
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /leetcode-java/127.word-ladder.java
+ */
 class Solution {
   public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-      if (!wordList.contains(endWord) || wordList.size() == 0) return 0;
-      Set<String> wordset = new HashSet<>();
+      if (wordList.size() == 0 || !wordList.contains(endWord)) return 0;
+      Set<String> wordSet = new HashSet<>();
       for (String s: wordList) {
-          wordset.add(s);
+          wordSet.add(s);
       }
       Set<String> visited = new HashSet<>();
       Queue<String> q = new LinkedList<>();
@@ -14,36 +22,28 @@ class Solution {
           int sz = q.size();
           for (int i = 0; i < sz; i ++) {
               String cur = q.poll();
-              if (changeOne(cur, endWord, q, visited, wordset)) {
-                  return length + 1;
+              char[] ch = cur.toCharArray();
+              for (int j = 0; j < cur.length(); j++) {
+                  char originChar = ch[j];
+                  for (char c = 'a'; c <= 'z'; c++) {
+                      if (c == originChar) continue;
+                      ch[j] = c;
+                      String nextWord = new String(ch);
+                      if (wordSet.contains(nextWord)) {
+                          if (nextWord.equals(endWord)) {
+                              return length + 1;
+                          }
+                          if (!visited.contains(nextWord)) {
+                              q.offer(nextWord);
+                              visited.add(nextWord);
+                          }
+                      }
+                  }
+                  ch[j] = originChar;
               }
           }
           length ++;
       }
       return 0;
   }
-  private boolean changeOne(String cur, String endWord, Queue<String> q, Set<String> visited, Set<String> wordset) {
-      char[] charArray = cur.toCharArray();
-      for (int i = 0; i < endWord.length(); i++) {
-          char originChar = charArray[i];
-          for (char j = 'a'; j  <= 'z'; j++) {
-              if (j == originChar) continue;
-              charArray[i] = j;
-              String nextWord = new String(charArray);
-              if (wordset.contains(nextWord)) {
-                  if (nextWord.equals(endWord)) {
-                      return true;
-                  }
-                  if (!visited.contains(nextWord)) {
-                      q.offer(nextWord);
-                      visited.add(nextWord);
-                  }
-              }
-          }
-          charArray[i] = originChar;
-      }
-      return false;
-  }
-      
-      
 }
