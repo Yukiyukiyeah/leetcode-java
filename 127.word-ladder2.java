@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-12 17:47:41
+ * @LastEditTime: 2020-12-12 20:08:25
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /leetcode-java/127.word-ladder2.java
+ */
 class Solution {
   public int ladderLength(String beginWord, String endWord, List<String> wordList) {
       if (wordList.size() == 0 || !wordList.contains(endWord)) return 0;
@@ -6,50 +14,43 @@ class Solution {
           wordSet.add(s);
       }
       Set<String> visited = new HashSet<>();
-      Set<String> beginVisited = new HashSet<>();
-      Set<String> endVisited = new HashSet<>();
-      beginVisited.add(beginWord);
-      endVisited.add(endWord);
+      Set<String> beginSet = new HashSet<>();
+      Set<String> endSet = new HashSet<>();
+      beginSet.add(beginWord);
+      endSet.add(endWord);
+      visited.add(beginWord);
       int length = 1;
-      while (!beginVisited.isEmpty() && !endVisited.isEmpty()) {
-          if (beginVisited.size() > endVisited.size()) {
-              Set tmp = beginVisited;
-              beginVisited = endVisited;
-              endVisited = tmp;
+      while (!beginSet.isEmpty() && !endSet.isEmpty()) {
+          if (beginSet.size() > endSet.size()) {
+              Set<String> tmp = beginSet;
+              beginSet = endSet;
+              endSet = tmp;
           }
-          Set<String> nextLevelVisited = new HashSet<>();
-          for (String word: beginVisited) {
-              if (changeOne(word, endVisited, visited, wordSet, nextLevelVisited)) {
-                  return length + 1;
+          Set<String> nextLevelSet = new HashSet<>();
+          for (String word: beginSet) {
+              char[] ch = word.toCharArray();
+              for (int i = 0; i < word.length(); i++) {
+                  char originChar = ch[i];
+                  for (char c = 'a'; c <= 'z'; c++) {
+                      if (c == originChar) continue;
+                      ch[i] = c;
+                      String nextWord = new String(ch);
+                      if (wordSet.contains(nextWord)) {
+                          if (endSet.contains(nextWord)) {
+                              return length + 1;
+                          }
+                          if (!visited.contains(nextWord)) {
+                              visited.add(nextWord);
+                              nextLevelSet.add(nextWord);
+                          }
+                      }
+                      ch[i] = originChar;
+                  }
               }
           }
-          beginVisited = nextLevelVisited;
-          length ++;
+          beginSet = nextLevelSet;
+          length += 1;
       }
       return 0;
-  }
-  private boolean changeOne(String word, Set<String> endVisited, Set<String> visited, Set<String> wordSet, Set<String> nextLevelVisited) {
-      char[] charArray = word.toCharArray();
-      for (int i = 0; i < word.length(); i++) {
-          char originChar = charArray[i];
-          for (char c = 'a'; c <= 'z'; c++) {
-              if (c == originChar) {
-                  continue;
-              }
-              charArray[i] = c;
-              String nextWord = new String(charArray);
-              if (wordSet.contains(nextWord)) {
-                  if (endVisited.contains(nextWord)) {
-                  return true;
-                  }
-                  if (!visited.contains(nextWord)) {
-                      visited.add(nextWord);
-                      nextLevelVisited.add(nextWord);
-                  }
-              }
-          }
-          charArray[i] = originChar;
-      }
-      return false;
   }
 }
