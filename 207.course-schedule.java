@@ -1,6 +1,14 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-14 15:28:23
+ * @LastEditTime: 2020-12-14 15:48:17
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /leetcode-java/207.course-schedule.java
+ */
 class Solution {
   public boolean canFinish(int numCourses, int[][] prerequisites) {
-      List<List<Integer>> course = new ArrayList<ArrayList<Integer>>();
+      List<List<Integer>> course = new ArrayList<List<Integer>>();
       int[] indeg = new int[numCourses];
       for (int i = 0; i < numCourses; i++) {
           course.add(new ArrayList<Integer>());
