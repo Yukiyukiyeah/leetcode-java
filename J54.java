@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-16 13:59:07
+ * @LastEditTime: 2020-12-16 14:00:13
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /leetcode-java/J54.java
+ */
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -7,6 +15,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+// global k
 class Solution {
   int res, k;
   public int kthLargest(TreeNode root, int k) {
