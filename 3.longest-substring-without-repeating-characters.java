@@ -1,12 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2020-12-17 19:55:52
- * @LastEditTime: 2020-12-17 19:56:05
+ * @LastEditTime: 2020-12-24 14:22:11
  * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/3.longest-substring-without-repeating-characters.java
  */
-Map<Character, Integer> window = new HashMap<>();
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        Map<Character, Integer> window = new HashMap<>();
         char[] s2 = s.toCharArray();
         int left = 0, right = 0;
         int res = 0;
@@ -20,3 +22,5 @@ Map<Character, Integer> window = new HashMap<>();
             res = Math.max(res, right - left);
         }
         return res;
+    }
+}
