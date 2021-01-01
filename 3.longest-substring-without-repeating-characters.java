@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-12-17 19:55:52
- * @LastEditTime: 2020-12-24 14:22:11
- * @LastEditors: your name
+ * @LastEditTime: 2020-12-31 19:33:10
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /leetcode-java/3.longest-substring-without-repeating-characters.java
  */
@@ -18,8 +18,8 @@ class Solution {
                 left = Math.max(left, window.get(c) + 1);
             }
             window.put(c, right);
+            res = Math.max(res, right - left + 1);
             right ++;
-            res = Math.max(res, right - left);
         }
         return res;
     }
